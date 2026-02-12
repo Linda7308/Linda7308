@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suivi de protocole microbiologique</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Suivi du protocole (résumé + étapes)</h1>
+        <p class="subtitle">
+          Basé sur les actions visibles sur l'image : stérilisation, préparation du milieu,
+          ensemencement, incubation, observation et pesée.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Résumé du protocole</h2>
+        <ol id="summary-list"></ol>
+      </section>
+
+      <section class="card">
+        <div class="row between">
+          <h2>Checklist d'exécution</h2>
+          <button id="reset-btn" class="secondary">Réinitialiser</button>
+        </div>
+        <div class="progress-wrap">
+          <div id="progress-label">0 / 0 étape terminée</div>
+          <progress id="progress" value="0" max="100"></progress>
+        </div>
+        <ul id="steps-list" class="steps"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Minuteur de l'étape en cours</h2>
+        <div class="timer-box">
+          <p id="current-step">Aucune étape sélectionnée.</p>
+          <div class="timer" id="timer-display">00:00</div>
+          <div class="row">
+            <button id="start-timer">Démarrer</button>
+            <button id="pause-timer" class="secondary">Pause</button>
+            <button id="reset-timer" class="secondary">Remise à zéro</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
