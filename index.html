@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Révisions interactives — Membrane plasmique & Champignons</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Biologie microscopique</p>
+      <h1>Révisions interactives : membrane plasmique & champignons</h1>
+      <p class="subtitle">Des cartes mémoire, des QCM et un mini-jeu pour t’entraîner en t’amusant.</p>
+      <div class="controls">
+        <button class="primary" data-section="flashcards">Commencer avec les cartes</button>
+        <button class="ghost" data-section="quiz">Lancer un QCM</button>
+      </div>
+    </div>
+    <div class="stats">
+      <div>
+        <span id="score-total">0</span>
+        <p>Points</p>
+      </div>
+      <div>
+        <span id="streak">0</span>
+        <p>Série</p>
+      </div>
+      <div>
+        <span id="completed">0</span>
+        <p>Activités finies</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="tabs">
+      <button class="tab active" data-section="flashcards">Cartes mémoire</button>
+      <button class="tab" data-section="quiz">QCM</button>
+      <button class="tab" data-section="truefalse">Vrai / Faux</button>
+      <button class="tab" data-section="challenge">Mini-défi</button>
+    </nav>
+
+    <section id="flashcards" class="panel active">
+      <div class="panel-header">
+        <h2>Cartes mémoire</h2>
+        <p>Lis la question, puis retourne la carte pour vérifier ta réponse.</p>
+      </div>
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <h3 id="flashcard-question"></h3>
+          </div>
+          <div class="flashcard-back">
+            <h3>Réponse</h3>
+            <p id="flashcard-answer"></p>
+          </div>
+        </div>
+      </div>
+      <div class="panel-actions">
+        <button class="ghost" id="flashcard-prev">Précédent</button>
+        <button class="primary" id="flashcard-flip">Retourner</button>
+        <button class="ghost" id="flashcard-next">Suivant</button>
+      </div>
+      <p class="progress" id="flashcard-progress"></p>
+    </section>
+
+    <section id="quiz" class="panel">
+      <div class="panel-header">
+        <h2>QCM</h2>
+        <p>Choisis la bonne réponse pour gagner des points.</p>
+      </div>
+      <div class="quiz-card">
+        <h3 id="quiz-question"></h3>
+        <div id="quiz-options" class="quiz-options"></div>
+      </div>
+      <div class="panel-actions">
+        <button class="ghost" id="quiz-skip">Passer</button>
+        <button class="primary" id="quiz-validate">Valider</button>
+      </div>
+      <p class="feedback" id="quiz-feedback"></p>
+    </section>
+
+    <section id="truefalse" class="panel">
+      <div class="panel-header">
+        <h2>Vrai / Faux</h2>
+        <p>Décide rapidement si l’affirmation est correcte.</p>
+      </div>
+      <div class="quiz-card">
+        <h3 id="tf-question"></h3>
+        <div class="tf-buttons">
+          <button class="primary" id="tf-true">Vrai</button>
+          <button class="ghost" id="tf-false">Faux</button>
+        </div>
+      </div>
+      <p class="feedback" id="tf-feedback"></p>
+    </section>
+
+    <section id="challenge" class="panel">
+      <div class="panel-header">
+        <h2>Mini-défi : associe l’élément à sa fonction</h2>
+        <p>Glisse chaque carte vers la bonne catégorie.</p>
+      </div>
+      <div class="challenge">
+        <div class="challenge-items" id="challenge-items"></div>
+        <div class="challenge-zones">
+          <div class="dropzone" data-zone="membrane">
+            <h4>Membrane plasmique</h4>
+            <p>Fonctions et composants</p>
+          </div>
+          <div class="dropzone" data-zone="fungi">
+            <h4>Champignons</h4>
+            <p>Structures microscopiques</p>
+          </div>
+        </div>
+      </div>
+      <button class="primary" id="challenge-reset">Réinitialiser</button>
+      <p class="feedback" id="challenge-feedback"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bonnes révisions ! Pense à faire des pauses et à verbaliser les réponses.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
