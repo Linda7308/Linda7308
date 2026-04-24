@@ -1,0 +1,7 @@
+{
+  "image": "example_data/synthetic_gel.png",
+  "output_dir": "outputs",
+  "gel_type": "agarose",
+  "ladder_lane": 1,
+  "ladder_sizes": "10000,8000,6000,5000,4000,3000,2000,1500,1000,700,500"
+}
